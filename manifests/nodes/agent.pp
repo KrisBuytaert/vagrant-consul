@@ -8,8 +8,8 @@ node /agent/ {
       'datacenter' => 'vagrant0',
       'data_dir'   => '/var/lib/consul',
       'log_level'  => 'info',
-      'node_name'  => 'agent1',
-      'bind_addr'  => '192.168.99.112',
+      'node_name'  => $::hostname,
+      'bind_addr'  => $::ipaddress_eth1,
       'start_join'  => ['192.168.99.111'],
       'server'     => false
     }

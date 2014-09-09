@@ -26,4 +26,17 @@ Vagrant.configure("2") do |config|
       agent1_puppet.manifest_file = "site.pp"
     end
   end  
+
+   config.vm.define :agent2 do |agent2_config|
+    agent2_config.vm.box = "Centos65"
+    agent2_config.vm.network "private_network", ip:  "192.168.99.113"
+    agent2_config.vm.host_name = "agent2"
+    agent2_config.vm.provision :puppet do |agent2_puppet|
+      agent2_puppet.manifests_path = "manifests"
+      agent2_puppet.module_path = "modules"
+      agent2_puppet.manifest_file = "site.pp"
+    end
+  end  
+
+
 end
