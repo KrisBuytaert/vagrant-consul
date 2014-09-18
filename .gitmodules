@@ -13,3 +13,6 @@
 [submodule "modules/bind"]
 	path = modules/bind
 	url = https://github.com/thias/puppet-bind.git
+[submodule "modules/pdns"]
+	path = modules/pdns
+	url = https://github.com/haf/puppet-pdns.git
