@@ -16,3 +16,6 @@
 [submodule "modules/pdns"]
 	path = modules/pdns
 	url = https://github.com/haf/puppet-pdns.git
+[submodule "modules/apache"]
+	path = modules/apache
+	url = https://github.com/vStone/puppet-apache.git

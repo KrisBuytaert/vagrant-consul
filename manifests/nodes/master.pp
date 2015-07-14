@@ -1,6 +1,9 @@
 
 
+
 node /master/ {
+
+  class { 'epel': }
 
   class { 'consul':
     install_method   => 'package',
@@ -20,8 +23,20 @@ node /master/ {
   }
 
 
+  # This in an attempt to configure pgsql 
+  include pdns::nameserver
 
 
+
+
+  include consul_template
+
+  consul_template::template {'nginx':
+    source      => '/etc/consul-template/nginx.conf.ctmpl',
+    #  destination => '/etc/nginx/conf.d/revproxy.conf',
+    destination => '/tmp/nginx-snippet.conf',
+    command     => '/etc/init.d/nginx restart',
+  }
 
 
 
