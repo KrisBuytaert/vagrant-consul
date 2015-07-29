@@ -1,9 +1,0 @@
-$TTL    3600
-@       IN      SOA     localhost. root.inuits.eu. (
-                     2014090901         ; Serial
-                           3600         ; Refresh
-                           3600         ; Retry
-                        2419200         ; Expire
-                           3600 )       ; Negative Cache TTL
-	ns  localhost.
-	dname  node.prod.inuits.eu.

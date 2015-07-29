@@ -1,0 +1,7 @@
+# consul_template-managed file, will change dynamicaly 
+
+upstream consuls {
+ {{range service "apache"}}
+  server {{.Address}} ; {{end}}
+
+}

@@ -19,3 +19,12 @@
 [submodule "modules/apache"]
 	path = modules/apache
 	url = https://github.com/vStone/puppet-apache.git
+[submodule "modules/consult_template"]
+	path = modules/consul_template
+	url = git@github.com:KrisBuytaert/puppet-consul_template.git
+[submodule "modules/nginx"]
+	path = modules/nginx
+	url = git@github.com:Intelliplan/puppet-nginx.git
+[submodule "modules/concat"]
+	path = modules/concat
+	url = https://github.com/puppetlabs/puppetlabs-concat.git

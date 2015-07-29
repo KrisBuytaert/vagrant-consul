@@ -25,32 +25,14 @@ node /agent/ {
       'bind_addr'  => $::ipaddress_eth1,
       'start_join' => ['192.168.99.111'],
       'server'     => false,
-      'domain'     => hiera('consul_domain'),
+      'domain'     => 'prod.inuits.eu',
     }
   }
 
-  #  include pdns::nameserver
-  include pdns::resolver
 
 
 
 
-  class { '::bind':
-    chroot    => true ,
-  }
-
-
-  bind::server::conf { '/etc/named.conf':
-    listen_on_addr          => ['127.0.0.1'],
-    listen_on_port          => '5353',
-    recursion               => 'no',
-    zones                   => {
-      'fake.prod.inuits.eu' => [
-        'type master',
-        'file "named.fake.prod.inuits.eu"',
-        ],
-    },
-  }
 
 
 }
